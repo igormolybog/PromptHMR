@@ -64,9 +64,21 @@ Run the fetch script and use the following credentials when prompted. Note that 
 bash scripts/fetch_smplx.sh
 ```
 
-## 6. Run the Demo
-Once the models are downloaded to `data/body_models/`, run the demo:
+## 6. Run the Demos
 
+### Single View Reconstruction
 ```bash
 uv run scripts/demo_phmr.py --image data/examples/example_1.jpg --gravity_align
 ```
+
+### Video World-coordinate Reconstruction
+The video pipeline requires `ffmpeg` and `ffprobe` installed on your system.
+
+```bash
+# Install system dependencies
+sudo apt update && sudo apt install ffmpeg -y
+
+# Run video demo
+uv run scripts/demo_video.py --input_video data/examples/boxing.mp4
+```
+
